@@ -1,0 +1,42 @@
+def AND(digito1,digito2):
+    return str(int(digito1)*int(digito2))
+
+def OR(digito1,digito2):
+    suma = str(int(digito1)+int(digito2))
+    if(suma > "1"):
+        return "1"
+    return suma
+
+def XOR(digito1,digito2):
+    if(digito1 == "0" and digito2 == "1"):
+        return "1"
+    elif(digito1 == "1" and digito2 == "1"):
+        return "0"
+    elif(digito1 == "1" and digito2 == "0"):
+        return "1"
+    elif(digito1 == "0" and digito2 == "0"):
+        return "0"
+    elif(digito1 == "1" and digito2 == "0"):
+        return "1"
+    else:
+        return "0"
+
+def calculadora(cadena1, cadena2, OP):
+    #PROGRAMA ACÁ LA SOLUCIÓN
+    resultado = ""
+    if(OP == "AND"):
+        for i in range(len(cadena1)):
+            resultado += AND(cadena1[i], cadena2[i])
+    elif(OP == "OR"):
+        for i in range(len(cadena1)):
+            resultado += OR(cadena1[i], cadena2[i]) 
+    elif(OP == "XOR"):
+        for i in range(len(cadena1)):
+            resultado += XOR(cadena1[i], cadena2[i])
+    
+    else:
+        return "Esa operación no existe"
+    
+    
+    
+    return str(resultado)
